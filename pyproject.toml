@@ -5,10 +5,10 @@ description = "CLI para extraer dominios taxonómicos de vacantes de empleo medi
 requires-python = ">=3.9"
 dependencies = [
     "openai>=1.40.0",
-    "requests>=2.31.0",
     "beautifulsoup4>=4.12.0",
     "lxml>=5.0.0",
     "python-dotenv>=1.0.0",
+    "playwright>=1.40.0",
 ]
 
 [project.optional-dependencies]

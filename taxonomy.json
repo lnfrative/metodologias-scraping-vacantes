@@ -11,12 +11,15 @@
   },
   "D2": {
     "bloque": "Duras",
-    "nombre": "Backend y APIs",
-    "descripcion": "Lenguajes backend, frameworks, arquitecturas REST/GraphQL y protocolos.",
+    "nombre": "Desarrollo de Software",
+    "descripcion": "Desarrollo de aplicaciones en general (backend, frontend, APIs, móviles, escritorio o videojuegos): lenguajes de programación, frameworks y arquitecturas REST/GraphQL.",
     "sub_items": [
-      "Java", "Python", "Go", "PHP", "Node.js", "C#", ".NET", "Ruby",
+      "Java", "Python", "Go", "PHP", "Node.js", "C#", ".NET", "Ruby", "C++",
       "Spring Boot", "Django", "Flask", "FastAPI", "Laravel", "Express",
-      "REST", "GraphQL", "SOAP", "gRPC"
+      "REST", "GraphQL", "SOAP", "gRPC",
+      "JavaScript", "TypeScript", "React", "Angular", "Vue.js", "HTML", "CSS",
+      "Flutter", "React Native", "Kotlin", "Swift", "Android", "iOS",
+      "Unity", "Unreal Engine"
     ]
   },
   "D3": {

@@ -7,9 +7,8 @@ import sys
 from pathlib import Path
 
 from . import config, dataset_store
-from .cleaner import clean_html
 from .extractor import ExtractionError, extract_domains
-from .fetcher import FetchError, fetch_html
+from .fetcher import FetchError, fetch_vacancy_text
 from .models import VacancyRecord
 
 
@@ -41,10 +40,13 @@ def build_arg_parser() -> argparse.ArgumentParser:
 def _print_summary(record: VacancyRecord) -> None:
     print(f"\nURL: {record.url}")
     print(f"URL normalizada: {record.url_normalizada}")
-    for domain in record.dominios:
-        if domain.requerido:
-            items = ", ".join(domain.sub_items) if domain.sub_items else "(sin sub-ítems)"
-            print(f"  [{domain.dominio}] {domain.nombre}: {items}")
+    requeridos = [d for d in record.dominios if d.requerido]
+    if not requeridos:
+        print("  (no se detectó ningún dominio taxonómico en el texto)")
+        return
+    for domain in requeridos:
+        items = ", ".join(domain.sub_items) if domain.sub_items else "(sin sub-ítems)"
+        print(f"  [{domain.dominio}] {domain.nombre}: {items}")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -60,8 +62,7 @@ def main(argv: list[str] | None = None) -> int:
             return 0
 
     try:
-        html = fetch_html(args.url)
-        text = clean_html(html)
+        text = fetch_vacancy_text(args.url)
         if not text:
             print("Error: el texto limpio quedó vacío tras procesar el HTML.", file=sys.stderr)
             return 1

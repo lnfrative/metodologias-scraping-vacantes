@@ -95,12 +95,18 @@ def extract_domains(vacancy_text: str, url: str, client: OpenAI | None = None) -
 
 
 def _to_domain_results(parsed: dict, tax: dict) -> list[DomainResult]:
+    """Retorna siempre los 7 dominios de la taxonomía (esquema fijo), con
+    requerido=true/false según lo que haya evaluado el modelo. Esto mantiene
+    el dataset directamente consumible por pandas (misma forma tabular en
+    todas las filas, sin necesidad de reindex/fillna al cargar) y preserva la
+    trazabilidad de que el dominio sí fue evaluado y no encontrado, en vez de
+    simplemente ausente."""
     results = []
     for domain_id, domain in tax.items():
         entry = parsed.get(domain_id, {"requerido": False, "sub_items": []})
         requerido = bool(entry.get("requerido", False))
-        # Si el dominio no fue marcado como requerido, no arrastramos sub_items
-        # (evita "fugas" donde el modelo llena sub_items de un dominio no mencionado).
+        # Si no fue marcado como requerido, no arrastramos sub_items (evita
+        # "fugas" donde el modelo llena sub_items de un dominio no mencionado).
         sub_items = normalize_sub_items(entry.get("sub_items", []), tax) if requerido else []
         results.append(
             DomainResult(
