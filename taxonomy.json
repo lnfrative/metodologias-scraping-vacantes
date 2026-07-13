@@ -1,0 +1,67 @@
+{
+  "D1": {
+    "bloque": "Duras",
+    "nombre": "Bases de datos",
+    "descripcion": "Bases de datos relacionales (SQL), NoSQL, modelado y optimización de consultas.",
+    "sub_items": [
+      "SQL", "PostgreSQL", "MySQL", "SQL Server", "Oracle", "NoSQL",
+      "MongoDB", "Redis", "DynamoDB", "Cassandra", "Modelado de datos",
+      "Optimización de consultas"
+    ]
+  },
+  "D2": {
+    "bloque": "Duras",
+    "nombre": "Backend y APIs",
+    "descripcion": "Lenguajes backend, frameworks, arquitecturas REST/GraphQL y protocolos.",
+    "sub_items": [
+      "Java", "Python", "Go", "PHP", "Node.js", "C#", ".NET", "Ruby",
+      "Spring Boot", "Django", "Flask", "FastAPI", "Laravel", "Express",
+      "REST", "GraphQL", "SOAP", "gRPC"
+    ]
+  },
+  "D3": {
+    "bloque": "Duras",
+    "nombre": "Arquitectura distribuida",
+    "descripcion": "Microservicios, comunicación orientada a mensajes y alta disponibilidad.",
+    "sub_items": [
+      "Microservicios", "Kafka", "RabbitMQ", "SQS", "Alta disponibilidad",
+      "Balanceo de carga", "Sistemas distribuidos"
+    ]
+  },
+  "D4": {
+    "bloque": "Duras",
+    "nombre": "Cloud",
+    "descripcion": "Proveedores de nube, redes virtuales, cómputo serverless y almacenamiento administrado.",
+    "sub_items": [
+      "AWS", "GCP", "Azure", "Redes virtuales", "VPC", "Serverless",
+      "Lambda", "Cloud Functions", "Almacenamiento administrado", "S3",
+      "IAM"
+    ]
+  },
+  "D5": {
+    "bloque": "Duras",
+    "nombre": "DevOps y contenedores",
+    "descripcion": "Contenedores, pipelines CI/CD e infraestructura como código.",
+    "sub_items": [
+      "Docker", "Kubernetes", "CI/CD", "Jenkins", "GitHub Actions",
+      "GitLab CI", "Terraform", "Ansible", "Infraestructura como código"
+    ]
+  },
+  "D6": {
+    "bloque": "Blandas",
+    "nombre": "Metodologías ágiles",
+    "descripcion": "Marcos de trabajo ágiles y herramientas de seguimiento de requerimientos.",
+    "sub_items": [
+      "Scrum", "Kanban", "Jira", "Trello", "Gestión de proyectos ágiles"
+    ]
+  },
+  "D7": {
+    "bloque": "Blandas",
+    "nombre": "Habilidades interpersonales",
+    "descripcion": "Trabajo en equipo, comunicación técnica asertiva y resolución de problemas bajo presión.",
+    "sub_items": [
+      "Trabajo en equipo", "Comunicación asertiva",
+      "Resolución de problemas bajo presión", "Pensamiento crítico"
+    ]
+  }
+}
